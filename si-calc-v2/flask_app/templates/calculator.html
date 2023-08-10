@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Sector Investor Calculator</title>
+  <!-- Add any additional meta tags, stylesheets, or scripts here -->
+</head>
+
+<body>
+  <main>
+    <div class="inputOutputSection">
+        <div class="headerContainer">
+            <h1>Sector Investor Investment Calculator</h1>
+            <h2>Open Beta</h2>
+        </div>
+        <div class="contentContainer">
+            <div class="inputContainer">
+                <form action="/calculator" method="post">
+                    <div class="investmentAmountContainer">
+                        <table>
+                            <tr>
+                            <th>Investment Amount</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                <label for="investmentAmount">$</label>
+                                <input type="number" id="investmentAmount" name="investmentAmount" required>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="yourEquityContainer">
+                        <table>
+                            <tr>
+                            <th>Symbol</th>
+                            <th>Your Equity</th>
+                            </tr>
+                            <tr>
+                            <th>XLK</th>
+                            <td>
+                            <label for="equityXLK">$</label>
+                            <input type="number" id="equityXLK" name="equityXLK" value="0" required>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th>XLC</th>
+                            <td>
+                                <label for="equityXLC">$</label>
+                                <input type="number" id="equityXLC" name="equityXLC" value="0" required>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th>XLY</th>
+                            <td>
+                                <label for="equityXLY">$</label>
+                                <input type="number" id="equityXLY" name="equityXLY" value="0" required>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th>XLV</th>
+                            <td>
+                                <label for="equityXLV">$</label>
+                                <input type="number" id="equityXLV" name="equityXLV" value="0" required>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th>XLP</th>
+                            <td>
+                                <label for="equityXLP">$</label>
+                                <input type="number" id="equityXLP" name="equityXLP" value="0" required>
+                            </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="buttonContainer">
+                        <input type="submit" value="Calculate" class="submitButton">
+                    </div>
+                </form>  
+            </div>
+            <div class="outputContainer">
+                <div class="outputHeader">
+                    <h2>Your Investment</h2>
+                </div>    
+                <div class="outputTable">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Action</th>
+                                <th></th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XLK</td>
+                                <td>{{ xlk_action }}</td>
+                                <td>$</td>
+                                <td>{{ xlk_investment|round|int }}</td>
+                            </tr>
+                            <tr>
+                                <td>XLC</td>
+                                <td>{{ xlc_action }}</td>
+                                <td>$</td>
+                                <td>{{ xlc_investment|round|int }}</td>
+                            </tr>
+                            <tr>
+                                <td>XLY</td>
+                                <td>{{ xly_action }}</td>
+                                <td>$</td>
+                                <td>{{ xly_investment|round|int }}</td>
+                            </tr>
+                            <tr>
+                                <td>XLV</td>
+                                <td>{{ xlv_action }}</td>
+                                <td>$</td>
+                                <td>{{ xlv_investment|round|int }}</td>
+                            </tr>
+                            <tr>
+                                <td>XLP</td>
+                                <td>{{ xlp_action }}</td>
+                                <td>$</td>
+                                <td>{{ xlp_investment|round|int }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>        
+      </section>
+  </main>
+<br><br>
+  <footer>
+    <!-- Your footer content goes here -->
+    <p>&copy; 2023 | All Rights Reserved.</p>
+  </footer>
+
+  <!-- Add any additional scripts or libraries just before the closing body tag -->
+</body>
+
+</html>

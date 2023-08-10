@@ -1,0 +1,153 @@
+footer {
+    text-align: center;
+  }
+
+  /* Set a base font and background color */
+  body {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+  }
+
+  /* Individual font sizes for specific elements */
+h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+
+  .inputOutputSection {
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headerContainer h1 {
+
+  }
+
+  .contentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .inputContainer {
+    width: 285px;
+    height: 335px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .investmentAmountContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .yourEquityContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  .submitButton {
+    width: 200px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Active effect */
+  .submitButton:active {
+    background-color: #007BFF;
+  }
+  
+  .outputContainer {
+    width: 285px;
+    height: 335px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .outputHeader {
+    display: flex;
+    justify-content: center;
+  }
+
+  .outputTable {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0px 16px rgba(0, 0, 0, 0.25); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .outputTable th, .outputTable td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .outputTable td:nth-child(1) {
+    width: 70px;
+  }
+
+  .outputTable td:nth-child(2) {
+    width: 70px;
+  }
+
+  .outputTable td:nth-child(3) {
+    width: 15px;
+  }
+
+  .outputTable td:nth-child(4) {
+    width: 70px;
+  }
+
+
+
+  @media (max-width: 600px) {
+    .contentContainer {
+      flex-direction: column;
+    }
+    .inputContainer, .outputContainer {
+      width: 285px; /* Adjust the width as needed */
+    }
+  }
+  
