@@ -2,11 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
-@app.route('/calculator', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def calculator():
     xlk_investment = 0.0
     xlc_investment = 0.0
@@ -449,11 +445,6 @@ def calculator():
         xlv_action = "Buy" if xlv_investment > 0 else "Sell" if xlv_investment < 0 else ""
         xlp_action = "Buy" if xlp_investment > 0 else "Sell" if xlp_investment < 0 else ""
 
-#        xlk_investment = round(xlk_investment)
- #       xlc_investment = round(xlc_investment)
-  #      xly_investment = round(xlk_investment)
-   #     xlv_investment = round(xlc_investment)
-    #    xlp_investment = round(xlk_investment)
 
         return render_template('calculator.html', 
                             xlk_investment=xlk_investment, xlk_action=xlk_action,
