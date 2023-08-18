@@ -9,6 +9,9 @@ def calculator():
     xly_investment = 0.0
     xlv_investment = 0.0
     xlp_investment = 0.0
+    print(request.form)  # Print all form data
+    investment_amount = request.form.get('investmentAmount')
+    print(investment_amount)  # Print the specific field
 
     if request.method == 'POST':
         # This is a POST request, so we have access to the form data.
