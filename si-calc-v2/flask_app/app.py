@@ -16,12 +16,12 @@ def calculator():
     if request.method == 'POST':
         # This is a POST request, so we have access to the form data.
         # You can access the form data using request.form.
-        investment_amount = float(request.form.get('investmentAmount'))
-        xlk_current_equity = float(request.form.get('equityXLK'))
-        xlc_current_equity = float(request.form.get('equityXLC'))
-        xly_current_equity = float(request.form.get('equityXLY'))
-        xlv_current_equity = float(request.form.get('equityXLV'))
-        xlp_current_equity = float(request.form.get('equityXLP'))
+        investment_amount = float(request.form.get('investmentAmount') or '0')
+        xlk_current_equity = float(request.form.get('equityXLK') or '0')
+        xlc_current_equity = float(request.form.get('equityXLC') or '0')
+        xly_current_equity = float(request.form.get('equityXLY') or '0')
+        xlv_current_equity = float(request.form.get('equityXLV') or '0')
+        xlp_current_equity = float(request.form.get('equityXLP') or '0')
 
         #initialize Total Portfolio Value Variable
         total_portfolio_value = investment_amount + xlk_current_equity + xlc_current_equity + xly_current_equity + xlv_current_equity + xlp_current_equity
@@ -448,13 +448,26 @@ def calculator():
         xlv_action = "Buy" if xlv_investment > 0 else "Sell" if xlv_investment < 0 else ""
         xlp_action = "Buy" if xlp_investment > 0 else "Sell" if xlp_investment < 0 else ""
 
+        # Convert floating-point numbers to integers
+        investment_amount = int(investment_amount)
+        xlk_current_equity = int(xlk_current_equity)
+        xlc_current_equity = int(xlc_current_equity)
+        xly_current_equity = int(xly_current_equity)
+        xlv_current_equity = int(xlv_current_equity)
+        xlp_current_equity = int(xlp_current_equity)
 
         return render_template('calculator.html', 
-                            xlk_investment=xlk_investment, xlk_action=xlk_action,
-                            xlc_investment=xlc_investment, xlc_action=xlc_action,
-                            xly_investment=xly_investment, xly_action=xly_action,
-                            xlv_investment=xlv_investment, xlv_action=xlv_action,
-                            xlp_investment=xlp_investment, xlp_action=xlp_action)
+                       xlk_investment=xlk_investment, xlk_action=xlk_action,
+                       xlc_investment=xlc_investment, xlc_action=xlc_action,
+                       xly_investment=xly_investment, xly_action=xly_action,
+                       xlv_investment=xlv_investment, xlv_action=xlv_action,
+                       xlp_investment=xlp_investment, xlp_action=xlp_action,
+                       investmentAmount=investment_amount, 
+                       equityXLK=xlk_current_equity,
+                       equityXLC=xlc_current_equity,
+                       equityXLY=xly_current_equity,
+                       equityXLV=xlv_current_equity,
+                       equityXLP=xlp_current_equity)
 
 
     return render_template('calculator.html', xlk_investment=0, xlc_investment=0, xly_investment=0, xlv_investment=0, xlp_investment=0, xlk_action="", xlc_action="", xly_action="", xlv_action="", xlp_action="")

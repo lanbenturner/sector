@@ -37,8 +37,8 @@ h1 {
     align-items: center;
   }
 
-  .headerContainer h1 {
-
+  .headerContainer {
+    margin-bottom: 50px;
   }
 
   .contentContainer {
@@ -60,27 +60,28 @@ input, textarea, select {
 
   .inputContainer {
     width: 285px;
-    height: 335px;
+    height: 375px;
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 0px;
     padding-right: 0px;
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 0px 16px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(to bottom, #3F485B 0%, #20252F 100%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to bottom, rgba(63, 72, 91, 0.8) 0%, rgba(32, 37, 47, 0.8) 100%);
   }
 
   .gradientheaderorange {
+    margin: -40px auto 10px auto;
     width: 200px;
     display: flex;
     justify-content: center;
     background: linear-gradient(to bottom, #FF8F35 0%, #A64800 100%);
     color: white;
-    padding: 10px 20px;
+    padding: 0px 20px;
     border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   }
 
   .investmentAmountContainer {
@@ -123,20 +124,28 @@ input, textarea, select {
   
   .outputContainer {
     width: 285px;
-    height: 335px;
+    height: 375px;
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 0px;
     padding-right: 0px;
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 0px 16px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(to bottom, #3F485B 0%, #20252F 100%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(to bottom, rgba(63, 72, 91, 0.8) 0%, rgba(32, 37, 47, 0.8) 100%);
   }
 
   .outputHeader {
+    margin: -40px auto 30px auto;
+    width: 200px;
     display: flex;
     justify-content: center;
+    background: linear-gradient(to bottom, #008E89 0%, #084745 100%);
+    color: white;
+    padding: 0px 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   }
 
   .outputTable {

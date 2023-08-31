@@ -10,22 +10,28 @@
 </head>
 
 <body>
-    <!--
+
     <script>
-        // The hardcoded password
-        var correctPassword = "invest";
-
-        // Prompt the user for the password
-        var userPassword = prompt("Please enter the password to view this page:", "");
-
-        // Check if the entered password matches the hardcoded password
-        if (userPassword !== correctPassword) {
-            // If the password is incorrect, display an alert and redirect or reload the page
-            alert("Incorrect password!");
-            location.reload();
+        // Check if the user has already entered the correct password
+        if (!sessionStorage.getItem('authenticated')) {
+            // The hardcoded password
+            var correctPassword = "invest";
+    
+            // Prompt the user for the password
+            var userPassword = prompt("Please enter the password to view this page:", "");
+    
+            // Check if the entered password matches the hardcoded password
+            if (userPassword !== correctPassword) {
+                // If the password is incorrect, display an alert and reload the page
+                alert("Incorrect password!");
+                location.reload();
+            } else {
+                // If the password is correct, set the 'authenticated' flag in sessionStorage
+                sessionStorage.setItem('authenticated', 'true');
+            }
         }
     </script>
-    -->
+
   <main>
     <div class="inputOutputSection">
         <div class="headerContainer">
@@ -46,7 +52,7 @@
                             <tr>
                                 <td>
                                 <label for="investmentAmount"><span class="highlightgreen">$</span></label>
-                                <input type="number" id="investmentAmount" name="investmentAmount" required>
+                                <input type="number" id="investmentAmount" name="investmentAmount" value="{{ investmentAmount }}">
                                 </td>
                             </tr>
                         </table>
@@ -62,35 +68,35 @@
                             <th>XLK</th>
                             <td>
                             <label for="equityXLK"><span class="highlightgreen">$</span></label>
-                            <input type="number" id="equityXLK" name="equityXLK" value="0" required>
+                            <input type="number" id="equityXLK" name="equityXLK" value="{{ equityXLK }}">
                             </td>
                             </tr>
                             <tr>
                             <th>XLC</th>
                             <td>
                                 <label for="equityXLC"><span class="highlightgreen">$</span></label>
-                                <input type="number" id="equityXLC" name="equityXLC" value="0" required>
+                                <input type="number" id="equityXLC" name="equityXLC" value="{{ equityXLC }}">
                             </td>
                             </tr>
                             <tr>
                             <th>XLY</th>
                             <td>
                                 <label for="equityXLY"><span class="highlightgreen">$</span></label>
-                                <input type="number" id="equityXLY" name="equityXLY" value="0" required>
+                                <input type="number" id="equityXLY" name="equityXLY" value="{{ equityXLY }}">
                             </td>
                             </tr>
                             <tr>
                             <th>XLV</th>
                             <td>
                                 <label for="equityXLV"><span class="highlightgreen">$</span></label>
-                                <input type="number" id="equityXLV" name="equityXLV" value="0" required>
+                                <input type="number" id="equityXLV" name="equityXLV" value="{{ equityXLV }}">
                             </td>
                             </tr>
                             <tr>
                             <th>XLP</th>
                             <td>
                                 <label for="equityXLP"><span class="highlightgreen">$</span></label>
-                                <input type="number" id="equityXLP" name="equityXLP" value="0" required>
+                                <input type="number" id="equityXLP" name="equityXLP" value="{{ equityXLP }}">
                             </td>
                             </tr>
                         </table>
