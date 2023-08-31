@@ -10,14 +10,33 @@
 </head>
 
 <body>
+    <!--
+    <script>
+        // The hardcoded password
+        var correctPassword = "invest";
+
+        // Prompt the user for the password
+        var userPassword = prompt("Please enter the password to view this page:", "");
+
+        // Check if the entered password matches the hardcoded password
+        if (userPassword !== correctPassword) {
+            // If the password is incorrect, display an alert and redirect or reload the page
+            alert("Incorrect password!");
+            location.reload();
+        }
+    </script>
+    -->
   <main>
     <div class="inputOutputSection">
         <div class="headerContainer">
             <h1>Sector Investor Investment Calculator</h1>
-            <h2>Open Beta</h2>
+            <h2>Version 2</h2>
         </div>
         <div class="contentContainer">
             <div class="inputContainer">
+                <div class="gradientheaderorange">
+                    <h2>Current Portfolio</h2>
+                </div>
                 <form action="/" method="post">
                     <div class="investmentAmountContainer">
                         <table>
@@ -26,7 +45,7 @@
                             </tr>
                             <tr>
                                 <td>
-                                <label for="investmentAmount">$</label>
+                                <label for="investmentAmount"><span class="highlightgreen">$</span></label>
                                 <input type="number" id="investmentAmount" name="investmentAmount" required>
                                 </td>
                             </tr>
@@ -42,35 +61,35 @@
                             <tr>
                             <th>XLK</th>
                             <td>
-                            <label for="equityXLK">$</label>
+                            <label for="equityXLK"><span class="highlightgreen">$</span></label>
                             <input type="number" id="equityXLK" name="equityXLK" value="0" required>
                             </td>
                             </tr>
                             <tr>
                             <th>XLC</th>
                             <td>
-                                <label for="equityXLC">$</label>
+                                <label for="equityXLC"><span class="highlightgreen">$</span></label>
                                 <input type="number" id="equityXLC" name="equityXLC" value="0" required>
                             </td>
                             </tr>
                             <tr>
                             <th>XLY</th>
                             <td>
-                                <label for="equityXLY">$</label>
+                                <label for="equityXLY"><span class="highlightgreen">$</span></label>
                                 <input type="number" id="equityXLY" name="equityXLY" value="0" required>
                             </td>
                             </tr>
                             <tr>
                             <th>XLV</th>
                             <td>
-                                <label for="equityXLV">$</label>
+                                <label for="equityXLV"><span class="highlightgreen">$</span></label>
                                 <input type="number" id="equityXLV" name="equityXLV" value="0" required>
                             </td>
                             </tr>
                             <tr>
                             <th>XLP</th>
                             <td>
-                                <label for="equityXLP">$</label>
+                                <label for="equityXLP"><span class="highlightgreen">$</span></label>
                                 <input type="number" id="equityXLP" name="equityXLP" value="0" required>
                             </td>
                             </tr>
